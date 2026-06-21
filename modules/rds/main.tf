@@ -20,7 +20,7 @@ resource "aws_db_instance" "main" {
   db_subnet_group_name   = aws_db_subnet_group.main.name
   vpc_security_group_ids = [var.rds_sg_id]
   publicly_accessible    = false
-  skip_final_snapshot    = true # OK for learning project; remove in real production
+  skip_final_snapshot    = true  # OK for learning project; remove in real production
   multi_az               = false # Multi-AZ is NOT free tier — keep false
 
   tags = {

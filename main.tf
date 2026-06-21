@@ -14,11 +14,11 @@ data "aws_ssm_parameter" "db_password" {
 }
 
 module "rds" {
-  source              = "./modules/rds"
-  project_name        = var.project_name
-  private_subnet_ids  = module.vpc.private_subnet_ids
-  rds_sg_id           = module.security.rds_sg_id
-  db_password         = data.aws_ssm_parameter.db_password.value
+  source             = "./modules/rds"
+  project_name       = var.project_name
+  private_subnet_ids = module.vpc.private_subnet_ids
+  rds_sg_id          = module.security.rds_sg_id
+  db_password        = data.aws_ssm_parameter.db_password.value
 }
 module "ec2" {
   source            = "./modules/ec2"

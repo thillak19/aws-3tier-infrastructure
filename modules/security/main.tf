@@ -31,10 +31,10 @@ resource "aws_security_group" "ec2" {
   vpc_id      = var.vpc_id
 
   ingress {
-    description     = "HTTP direct access (no ALB deployed)"
-    from_port       = 80
-    to_port         = 80
-    protocol        = "tcp"
+    description = "HTTP direct access (no ALB deployed)"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
